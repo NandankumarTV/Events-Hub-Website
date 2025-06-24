@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Filtered Photos</title>
+  <style>
+    .photo-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 15px;
+      display: inline-block;
+      width: 200px;
+      text-align: center;
+    }
+    .photo-card img {
+      width: 180px;
+      height: 160px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <h2>Filtered Event Photos</h2>
+  <div class="photo-gallery">
+    {% if photos %}
+      {% for photo in photos %}
+        <form method="POST" action="{% url 'select_photo' %}" style="display:inline-block;">
+    {% csrf_token %}
+    <input type="hidden" name="photo_name" value="{{ photo.photo_name }}">
+    <button type="submit" style="border:none; background:none; padding:0; cursor:pointer;">
+      <div class="photo-card">
+        <h4>{{ photo.photo_name }}</h4>
+        <img src="data:image/jpeg;base64,{{ photo.image_base64 }}" alt="{{ photo.photo_name }}">
+      </div>
+    </button>
+  </form>
+      {% endfor %}
+    {% else %}
+      <p>No photos found for this filter.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

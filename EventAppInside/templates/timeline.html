@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Timeline | Event Hub</title>
+  <link rel="stylesheet" href="{% static 'timeline.css' %}">
+</head>
+<body class="timeline-body">
+  <div class="timeline-container">
+    <h2>Select an Event Timeline</h2>
+    <div class="event-section-grid">
+      <form method="POST" action="{% url 'posts' %}">
+        {% csrf_token %}
+        <input type="hidden" name="status" value="upcoming" />
+        <button class="event-card upcoming">Upcoming Events</button>
+      </form>
+
+      <form method="POST" action="{% url 'posts' %}">
+        {% csrf_token %}
+        <input type="hidden" name="status" value="ongoing" />
+        <button class="event-card ongoing">Ongoing Events</button>
+      </form>
+
+      <form method="POST" action="{% url 'posts' %}">
+        {% csrf_token %}
+        <input type="hidden" name="status" value="closed" />
+        <button class="event-card closed">Closed Events</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

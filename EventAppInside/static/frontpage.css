@@ -1,0 +1,84 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffb6c1; /* hotpink-ish */
+}
+
+/* Header Section */
+.big-box {
+  text-align: center;
+  background-color: #adff2f;
+  padding: 30px 20px;
+  border-radius: 0 0 20px 20px;
+}
+
+.pevent-title {
+  font-size: 1.8rem;
+  font-family: 'Satisfy', cursive;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.topic {
+  font-family: 'Alkalami', serif;
+  color: #1e90ff;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Event Grid */
+.img {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  background: #00ffff;
+}
+
+.img-quotes {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.edu, .sports {
+  background: #fffaf0;
+  color: #d63384;
+  font-family: 'Alkalami', serif;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 30px 20px;
+  border: none;
+}
+
+.edu-view, .sports-view {
+  margin-top: 10px;
+  padding: 12px;
+  width: 90%;
+  font-size: 1.1rem;
+  background-color: #87cefa;
+  color: #00008b;
+  border-radius: 25px;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.edu-view:hover, .sports-view:hover {
+  background-color: #00008b;
+  color: #87cefa;
+  cursor: pointer;
+}
+
+/* Footer Quote */
+.down-quotes {
+  background-color: #adff2f;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.dwn-quo-para {
+  font-family: 'Satisfy', cursive;
+  font-size: 1.6rem;
+  color: #2600ff;
+}

@@ -1,0 +1,92 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ecf0f3, #dfe6e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Signup Card */
+.signup-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.signup-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2d3436;
+}
+
+/* Labels & Inputs */
+.signup-container label {
+    display: block;
+    margin-bottom: 6px;
+    color: #636e72;
+    font-weight: 600;
+}
+
+.signup-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.signup-container button {
+    width: 100%;
+    background: #00b894;
+    color: white;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.signup-container button:hover {
+    background: #019875;
+}
+
+/* Message Styling */
+.messages {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.messages li {
+    background: #ffe0e0;
+    color: #d8000c;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.messages li.success {
+    background: #e0ffe0;
+    color: #006400;
+}
+
+/* Login Link */
+.signup-container p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-container a {
+    color: #00b894;
+    text-decoration: none;
+}
+.signup-container a:hover {
+    text-decoration: underline;
+}

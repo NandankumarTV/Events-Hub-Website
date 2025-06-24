@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Location | Event Hub</title>
+  <link rel="stylesheet" href="{% static 'location.css' %}">
+</head>
+<body class="location-body">
+  <div class="location-container">
+    <h2>Select a Location</h2>
+    <div class="location-grid">
+      <form method="POST" action="{% url 'timeLineEvents' %}">
+        {% csrf_token %}
+        <button class="location-btn" name="location" value="Bangalore">Bangalore</button>
+      </form>
+      <form method="POST" action="{% url 'timeLineEvents' %}">
+        {% csrf_token %}
+        <button class="location-btn" name="location" value="Mumbai">Mumbai</button>
+      </form>
+      <form method="POST" action="{% url 'timeLineEvents' %}">
+        {% csrf_token %}
+        <button class="location-btn" name="location" value="Delhi">Delhi</button>
+      </form>
+      <form method="POST" action="{% url 'timeLineEvents' %}">
+        {% csrf_token %}
+        <button class="location-btn" name="location" value="Hyderabad">Hyderabad</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

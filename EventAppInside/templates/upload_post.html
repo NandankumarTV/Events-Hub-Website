@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit Event Post</title>
+  <link rel="stylesheet" href="{% static 'upload_post.css' %}">
+</head>
+<body>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+  <div class="upload-container">
+    <h2>New Event Post</h2>
+
+    <form method="POST" enctype="multipart/form-data" action="{% url 'save_post' %}">
+      {% csrf_token %}
+
+      <label>Photo:</label>
+      <input type="file" name="photo" accept="image/*" required />
+
+      <label>Photo Name:</label>
+      <input type="text" name="photo_name" required />
+
+      <label>Description:</label>
+      <textarea name="description" rows="4" required></textarea>
+
+      <label>Location:</label>
+      <select name="location" required>
+        <option value="">-- Select Location --</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Hyderabad">Hyderabad</option>
+      </select>
+
+      <label>Event Type:</label>
+      <select name="event_type" required>
+        <option value="">-- Select Event Type --</option>
+        <option value="1">Educational</option>
+        <option value="2">Sports</option>
+        <option value="3">Charity</option>
+        <option value="4">Cultural</option>
+      </select>
+
+<label>Date of Event:</label>
+<input type="date" name="timestamp" min="{{ today }}" required />
+
+
+      <button type="submit">Submit Post</button>
+    </form>
+
+    <form method="GET" action="{% url 'home' %}">
+      <button type="submit" class="back-home-btn">🏠 Back to Home</button>
+    </form>
+  </div>
+  <!-- your upload form and content -->
+
+<!-- Add this at the end of your HTML file -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dateInput = document.querySelector('input[type="date"]');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute("min", today);
+
+    dateInput.addEventListener("keydown", function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+</body>
+</html>
